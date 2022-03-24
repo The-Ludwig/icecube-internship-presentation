@@ -1,4 +1,94 @@
 \section{Icecube Basics}
+
+\tdplotsetmaincoords{60}{110}
+%
+\pgfmathsetmacro{\rvec}{3}
+\pgfmathsetmacro{\thetavec}{40}
+\pgfmathsetmacro{\phivec}{60}
+
+\begin{frame}{The Icecube Observatory\dots}
+    \begin{columns}
+        \hspace{-3em}
+        \begin{column}{.6\textwidth}
+            \vspace{-2em}
+            \begin{figure}
+                \centering
+                \begin{tikzpicture}[tdplot_main_coords]
+                    \node at (0, 0){
+                        \def\svgwidth{1\textwidth}
+                        \graphicspath{{media/}}
+                        \fontsize{6}{4}\selectfont
+                        \input{media/icecube_opt.pdf_tex}
+                    };
+                \end{tikzpicture}
+                \vspace{-2em}
+                \caption*{\small Modified from \fullcite{reimann2020search} }
+            \end{figure}
+        \end{column}
+        \hspace{-2em}
+        \begin{column}{.4\textwidth}
+            \begin{itemize}
+                \item[\textbf{\dots}] is located at the South-Pole.
+                \item[\textbf{\dots}] finished construction in 2010.
+                \item[\textbf{\dots}] has \SI{1}{\kilo\meter\tothe{3}} total volume.
+                \item[\textbf{\dots}] can detect (InIce): $E_{\nu} = \mathcal{O}\l(\unit{\tera\electronvolt}\r)-\mathcal{O}\l(\unit{\peta\electronvolt}\r)$.
+                \item[\textbf{\dots}] can detect (DeepCore): $E_{\nu} > \SI{10}{\giga\electronvolt}$.
+            \end{itemize}
+        \end{column}
+        \hspace{2em}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{The Icecube Observatory Vocabulary}
+    \begin{columns}
+        \hspace{-3em}
+        \begin{column}{.6\textwidth}
+            \vspace{-2em}
+            \begin{figure}
+                \centering
+                \begin{tikzpicture}[tdplot_main_coords]
+                    \node at (0, 0){
+                        \def\svgwidth{1\textwidth}
+                        \graphicspath{{media/}}
+                        \fontsize{6}{4}\selectfont
+                        \input{media/icecube_opt.pdf_tex}
+                    };
+                    \coordinate (O) at (2,2.5,3.5);
+                    \draw[thick,->] (O) -- +(2,0,0) node[anchor=north east, shift={(-.2,.1)}]{\small$x$};
+                    \draw[thick,->] (O) -- +(0,2,0) node[anchor=west]{\small$y$};
+                    \draw[thick,->] (O) -- +(0,0,2) node[anchor=east]{\small$z$};
+                    \tdplotsetcoord{P}{\rvec}{\thetavec}{\phivec}
+                    \draw[stealth-,color=mLightBrown] (O) -- +(P) node[above right] {$\nu$};
+                    \draw[dashed, color=mLightBrown] (O) -- +(Pxy);
+                    \draw[dashed, color=mLightBrown] (O)+(P) -- +(Pxy);
+                    \tdplotdrawarc{(O)}{1}{0}{\phivec}{anchor=south, shift={(.2,-.1)}}{\small$\Phi$}
+                    \tdplotsetthetaplanecoords{\phivec}
+                    \tdplotdrawarc[tdplot_rotated_coords]{(O)}{1}{0}%
+                    {\thetavec}{anchor=north,shift={(0,-.1)}}{\small$\Theta$}
+                \end{tikzpicture}
+                \vspace{-2em}
+                \caption*{\small Modified from \fullcite{reimann2020search} }
+            \end{figure}
+        \end{column}
+        \hspace{2em}
+        \begin{column}{.4\textwidth}
+            \begin{itemize}
+                \item [\textbf{Zenith}] $\Theta$
+                \item [\textbf{Azimuth}] $\Phi$
+                      \pause
+                \item [\textbf{DOM}] Digital-Optical-Module (PMT)
+                \item [\textbf{InIce}] 78 strings\\ each 60 DOMs\\ DOM-to-DOM: \SI{17}{\meter}
+                      string-to-string: \SI{125}{\meter}
+                \item [\textbf{Deep Core}] 8 high efficiency strings
+                      string-to-string: \SI{75}{\meter}
+                      \pause
+                \item [\textbf{$\hookrightarrow$Upper}]  10 DOMS, DOM-to-DOM: \SI{10}{\meter}
+                \item [\textbf{$\hookrightarrow$Lower}]  50 DOMS, DOM-to-DOM: \SI{7}{\meter}
+            \end{itemize}
+        \end{column}
+        \hspace{-2em}
+    \end{columns}
+\end{frame}
 \begin{frame}{}
     \begin{columns}[]
         \begin{column}{.5\textwidth}

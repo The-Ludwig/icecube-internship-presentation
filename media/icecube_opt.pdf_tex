@@ -1,0 +1,74 @@
+%% Creator: Inkscape 1.1.2 (0a00cf5339, 2022-02-04, custom), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'icecube_opt.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{306.98249817bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.79560723)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{icecube_opt.pdf}}%
+    \put(0.0202265,0.69757345){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}50 m\end{tabular}}}}%
+    \put(-0.00345768,0.39352736){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1450 m\end{tabular}}}}%
+    \put(-0.00367196,0.18106823){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2450 m \end{tabular}}}}%
+    \put(-0.00367196,0.14206119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2820 m\end{tabular}}}}%
+    \put(0.66107843,0.24622829){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Eiffel Tower\end{tabular}}}}%
+    \put(0.66386831,0.22171839){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}324 m \end{tabular}}}}%
+    \put(0.08482175,0.77741893){\color[rgb]{0.00392157,0.00392157,0.00392157}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}IceCube Lab\end{tabular}}}}%
+    \put(0.3699377,0.00951599){\color[rgb]{0.00392157,0.00392157,0.00392157}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Bedrock\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{icecube_opt.pdf}}%
+    \put(0.65137376,0.4620676){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}IceCube In-Ice Array\end{tabular}}}}%
+    \put(0.65181875,0.43230607){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}86 strings incl. DeepCore\end{tabular}}}}%
+    \put(0.65106565,0.40750303){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5160 optical sensor\end{tabular}}}}%
+    \put(0.65166471,0.36785358){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}DeepCore\end{tabular}}}}%
+    \put(0.65166471,0.33637062){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}8 strings lower $E_\nu$ +\end{tabular}}}}%
+    \put(0.65217818,0.29399431){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}480 + 420 optical sensor\end{tabular}}}}%
+    \put(0.65217818,0.31390005){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}7 standard central strings\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
