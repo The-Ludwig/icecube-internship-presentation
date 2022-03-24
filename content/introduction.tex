@@ -6,6 +6,31 @@
 \pgfmathsetmacro{\thetavec}{40}
 \pgfmathsetmacro{\phivec}{60}
 
+\begin{frame}{Neutrinos}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{itemize}
+                \item They come in three flavors: $\nu_{\mathbb{e}}, \nu_{\mathbb{\mu}}, \nu_{\mathbb{\tau}}$
+                \item They are uncharged
+                \item They only via the weak force
+                \item \emph{Very light}: $m_{\nu} < \SI{0.8}{\electronvolt}$\footnotemark[1]
+                \item \emph{Very hard} to observe
+                \item[$\Rightarrow$] There is still a lot to learn about and from neutrinos!
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{media/feynman_diagrams.png}
+
+                \includegraphics[width=.6\textwidth]{media/neutrino_interaction.png}
+                \caption*{Feynman Diagrams and interaction signatures at Icecube \footnotemark[2]}
+            \end{figure}
+        \end{column}
+    \end{columns}
+    \footnotetext[1]{{\fullcite{aker2022direct}}}
+    \footnotetext[2]{{\fullcite{reimann2020search}}}
+\end{frame}
 \begin{frame}{The Icecube Observatory\dots}
     \begin{columns}
         \hspace{-3em}
@@ -61,10 +86,10 @@
                     \draw[stealth-,color=mLightBrown] (O) -- +(P) node[above right] {$\nu$};
                     \draw[dashed, color=mLightBrown] (O) -- +(Pxy);
                     \draw[dashed, color=mLightBrown] (O)+(P) -- +(Pxy);
-                    \tdplotdrawarc{(O)}{1}{0}{\phivec}{anchor=south, shift={(.2,-.1)}}{\small$\Phi$}
+                    \tdplotdrawarc{(O)}{1}{0}{\phivec}{anchor=south, shift={(.2,-.1)}}{\small$\phi$}
                     \tdplotsetthetaplanecoords{\phivec}
                     \tdplotdrawarc[tdplot_rotated_coords]{(O)}{1}{0}%
-                    {\thetavec}{anchor=north,shift={(0,-.1)}}{\small$\Theta$}
+                    {\thetavec}{anchor=north,shift={(0,-.1)}}{\small$\theta$}
                 \end{tikzpicture}
                 \vspace{-2em}
                 \caption*{\small Modified from \fullcite{reimann2020search} }
@@ -73,8 +98,8 @@
         \hspace{2em}
         \begin{column}{.4\textwidth}
             \begin{itemize}
-                \item [\textbf{Zenith}] $\Theta$
-                \item [\textbf{Azimuth}] $\Phi$
+                \item [\textbf{Zenith}] $\theta$
+                \item [\textbf{Azimuth}] $\phi$
                       \pause
                 \item [\textbf{DOM}] Digital-Optical-Module (PMT)
                 \item [\textbf{InIce}] 78 strings\\ each 60 DOMs\\ DOM-to-DOM: \SI{17}{\meter}
@@ -89,17 +114,64 @@
         \hspace{-2em}
     \end{columns}
 \end{frame}
-\begin{frame}{}
-    \begin{columns}[]
-        \begin{column}{.5\textwidth}
-            For citations directly on the page:\\
-            First use \texttt{\small \backslash footnotemark[i]} \footnotemark[1]
+\begin{frame}{Methods of Reconstruction}
+    \centering
+    \begin{columns}[T]
+        \begin{column}{.25\textwidth}
+            LineFit\\
+            \begin{equation*}
+                \min_{\vec{x}_0, \vec v} \sum_{i=1}^{N}\abs{\vec x_i - \l(\vec{x}_{0}+\vec v t_i\r)}^2
+            \end{equation*}
+            \begin{itemize}
+                \item Minimize square error
+                \item Simple first guess
+                \item Not much physics \enquote{input}
+            \end{itemize}
         \end{column}
-        \begin{column}{.5\linewidth}
-            And then\\
-            \texttt{\small \backslash footnotetext[i]\{\backslash fullcite\{citation\}\}}
+        \pause
+        \begin{column}{.35\textwidth}
+            MPEFit\\
+            \begin{equation*}
+                \max_{\vec{r}_0, t_0, \phi, \theta} \prod_{i=1}^{N} p\l(t_{i,\mathrm{res}}\middle|\vec{r}_0, t_0, \vec d(\phi, \theta)\r)
+            \end{equation*}
+            \begin{itemize}
+                \item Maximize Likelihood $\mathcal L$
+                \item Complex
+                \item A lot of physics input
+                \item Uncertainty by varying $\mathcal L$(Paraboloid)
+            \end{itemize}
+        \end{column}
+        \pause
+        \begin{column}{.4\textwidth}
+            Machine Learning \\
+            \begin{equation*}
+                \min_{\vec p} \frac{1}{N}\sum_{i=1}^{N} L(y_{\mathrm{pred}}=\hat{f}\l(\mathbf{X_i} \middle | \vec p\r), y_{i,\mathrm{true}})
+            \end{equation*}
+
+            \begin{itemize}
+                \item Minimize empirical loss-function $\mathbf L$
+                \item Training the $\vec p$ is complex, but applying is simple
+                \item No physics input, except true label $y_{i,\mathrm{true}}$
+                \item Uncertainty from estimator $\hat f$
+            \end{itemize}
         \end{column}
     \end{columns}
-
-    \footnotetext[1]{So this is under \emph{all} columns}
+\end{frame}
+\begin{frame}{Monte Carlo Simulation}
+    From where do we get the true labels, e.g $E, \theta$ or $\phi$?
+    $\rightarrow$ \textbf{Monte Carlo Simulation} \\
+    \vspace{1em}
+    \begin{center}
+        Generate Primary Particle ($E_\nu, \theta, \phi$)\\
+        $\downarrow$\\
+        Propagation/Interaction/Decay
+        \\$\downarrow$\\
+            Secondary Particle
+            \\$\downarrow$\\
+        Detector interaction and response (DOM pulses)
+        \\$\downarrow$\\
+            Machine Learning input (e.g. $n$ features per DOM)
+    \end{center}
+    \pause
+    \textbf{Do we trust our simulation data?}
 \end{frame}
