@@ -1,14 +1,23 @@
-\section{DNN Software}
 \begin{frame}{DNN Reco}
     \begin{itemize}
         \item \texttt{dnn\_reco} \footnote{\href{https://github.com/icecube/dnn_reco/}{github.com/icecube/dnn\_reco/}}
               software by Mirco Hünnefeld (in \texttt{python3} based on \texttt{Tensorflow})
-        \item Generates training data (per DOM feature generation) from \texttt{i3} files
-        \item Deep Neural Network (DNN) using with hexagonal and normal convolutional layers
+        \item Versatile network design using hexagonal convolutional layers
+        \item Training data generation and normalization for IceCube
+        \item Weighted adaptive multi-label training
+        \item DNN Based reconstruction methods already outperformed classical ones in:
+              \begin{itemize}
+                  \item cascade energy
+                  \item cascade direction
+                  \item muon track energy
+                        \item[\color{mLightBrown}$\Rightarrow$]<2-> {\color{mLightBrown} muon track direction?}
+              \end{itemize}
     \end{itemize}
+\end{frame}
+\begin{frame}{DNN Reco Feature Generation}
     \begin{figure}
         \centering
-        \includegraphics[width=.6\textwidth]{media/feature_generation}
+        \includegraphics[width=.8\textwidth]{media/feature_generation}
         \caption*{Feature generation [\fullcite{DNNReco}]}
     \end{figure}
 \end{frame}
