@@ -1,6 +1,6 @@
 IceCube Internship Presentation
 ===
-[Latest PDF Version](https://github.com/The-Ludwig/icecube-internship-presentation/releases/latest/download/latex-template.pdf)
+[Latest PDF Version](https://github.com/The-Ludwig/icecube-internship-presentation/releases/latest/download/icecube-internship-presentation-2.pdf)
 [![Build LaTeX](https://github.com/The-Ludwig/icecube-internship-presentation/actions/workflows/build.yml/badge.svg)](https://github.com/The-Ludwig/icecube-internship-presentation/actions/workflows/build.yml)
 
 I had an ~5-week internship at the IceCube working group in Stockholm. In this talk I summarized what I did.
